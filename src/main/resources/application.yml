@@ -1,0 +1,57 @@
+server:
+  port: 8081
+
+spring:
+    kafka:
+        consumer:
+          group-id: "default"
+    data:
+      cassandra:
+        keyspace-name: testkeyspace
+        username: ZxEMConvUzhjvcuODfAUpLDe
+        password: k0nazQr,4av,k76hqIZbJcOiBHyTWbkyeS,0,gWPrHD8cIDYhuo3CG8BO3XXjGlUOh2dCe2voziytfn92Ia0+Lifnf8Y1IIOBJmpURM.R5n.vRjjce7wWwvQ6BKojcQU
+        schema-action: create_if_not_exists
+        request:
+          timeout: 15s
+          throttler:
+            max-concurrent-requests: 1000
+            max-queue-size: 100000
+        connection:
+          connect-timeout: 15s
+          init-query-timeout: 15s
+topic:
+  name: t.food.order
+
+astra:
+  api:
+    application-token: AstraCS:ZxEMConvUzhjvcuODfAUpLDe:a4460e5207132cfa166b15c3a9fecfcde810d68e39cc7215369c0e1ea7b9c71f
+    database-id: 3047180d-25da-4045-b819-885c11beb5a9
+    database-region: europe-west1
+    cross-region-failback: false
+    grpc:
+      enabled: true
+    metrics:
+      export:
+        enabled: true
+        prometheus:
+          enabled: true
+      enabled: true
+
+  # Connectivity to Cassandra
+  cql:
+    enabled: true
+    download-scb:
+      enabled: true
+    driver-config:
+      basic:
+        session-keyspace: testkeyspace
+
+management:
+  server:
+    port: 9091
+    address: 127.0.0.1
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
