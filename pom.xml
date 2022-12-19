@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>yonash.lilach</groupId>
-    <artifactId>sdk-quickstart-spring</artifactId>
+    <artifactId>kafka-consumer-cassandra-data-center</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>sdk-quickstart-spring</name>
     <description>sdk-quickstart-spring</description>
