@@ -20,6 +20,7 @@ public class FoodOrderService {
 
     public void persistFoodOrder(FoodOrderDto foodOrderDto) {
         FoodOrder foodOrder = modelMapper.map(foodOrderDto, FoodOrder.class);
+        foodOrder.setId(System.currentTimeMillis());
         FoodOrder persistedFoodOrder = foodOrderRepository.save(foodOrder);
 
         log.info("food order persisted {}", persistedFoodOrder);

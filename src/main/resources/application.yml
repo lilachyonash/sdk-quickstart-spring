@@ -4,12 +4,12 @@ server:
 spring:
     kafka:
         consumer:
-          group-id: "default"
+          group-id: "astradb-connect-group"
     data:
       cassandra:
         keyspace-name: testkeyspace
-        username: ZxEMConvUzhjvcuODfAUpLDe
-        password: k0nazQr,4av,k76hqIZbJcOiBHyTWbkyeS,0,gWPrHD8cIDYhuo3CG8BO3XXjGlUOh2dCe2voziytfn92Ia0+Lifnf8Y1IIOBJmpURM.R5n.vRjjce7wWwvQ6BKojcQU
+        username: AixflMnklRMmdPdmjDfjcrkb
+        password: ssf7yMb63nRwF0HSw9n1bzD.1QFEFNPc2Z0mPhnIZ7sCUvjgi++_PEjmhdrjfsDp9UOLs5E+yOzQZFA,r0aQQ8SWQvY8Xqf7Uc18lq.WEsxawsjET_GO1XCRSg_mY-e9
         schema-action: create_if_not_exists
         request:
           timeout: 15s
@@ -24,10 +24,10 @@ topic:
 
 astra:
   api:
-    application-token: AstraCS:ZxEMConvUzhjvcuODfAUpLDe:a4460e5207132cfa166b15c3a9fecfcde810d68e39cc7215369c0e1ea7b9c71f
+    application-token: AstraCS:AixflMnklRMmdPdmjDfjcrkb:354c677db41490f3e50a07b17f93e06f68fe939c8a8c761de77d2f99da2e1575
     database-id: 3047180d-25da-4045-b819-885c11beb5a9
     database-region: europe-west1
-    cross-region-failback: false
+    cross-region-failback: true
     grpc:
       enabled: true
     metrics:
@@ -55,3 +55,5 @@ management:
       exposure:
         include: "*"
 
+datastax.astra:
+  secure-connect-bundle: static/secure-connect-testdb.zip
